@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "01bdd18a-131a-489c-a7fe-a5fa7fd9add8",
+		"name": "Data Bundle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch Airtime Povider positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"billerID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[0].billerId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"billerID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[1].billerId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"billerID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[2].billerId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"billerID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[3].billerId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"biller Category ID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[0].billCategoryId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"biller Category ID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[1].billCategoryId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"biller Category ID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[2].billCategoryId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"biller Category ID is greater than zero\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[3].billCategoryId).is.above(0);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[0].name).to.eql('9MOBILE');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[1].name).to.eql('AIRTEL');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[2].name).to.eql('GLO');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.responseData[3].name).to.eql('MTN');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpbmZvQHNwYWNlc28yby5jb20iLCJlbWFpbCI6ImluZm9Ac3BhY2VzbzJvLmNvbSIsInBybiI6IisyMzQ4MDM2NTgyNTkwIiwic2lkIjoiNDU0IiwidW5pcXVlX25hbWUiOiJNdWRhLE5hbGF0IiwibmFtZWlkIjoiNDU2IiwianRpIjoiZjdlYzI0YTYtNGMwNy00NGJmLWI1YTYtMDZjZjg3MmMxNzQyIiwiaWF0IjoxNjEyNjMxMDMyLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZ2dyZWdhdG9yIiwibmJmIjoxNjEyNjMxMDMyLCJleHAiOjE2MTI2NDU0MzIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDQzMTQvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0NDMxNC8ifQ.ulkAQloeoCeW9Y4IP-2TthX89N5W5D4iYkP4frjcFqI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://staging-api.eazymoni.com/partner/airtime/providers",
+					"protocol": "https",
+					"host": [
+						"staging-api",
+						"eazymoni",
+						"com"
+					],
+					"path": [
+						"partner",
+						"airtime",
+						"providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Airtime Povider negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://staging-api.eazymoni.com/partner/airtime/providers",
+					"protocol": "https",
+					"host": [
+						"staging-api",
+						"eazymoni",
+						"com"
+					],
+					"path": [
+						"partner",
+						"airtime",
+						"providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Valid response with status code 200\", function () {\r",
+							"     pm.response.to.have.status(200);\r",
+							"     pm.response.to.be.ok\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var easyMoni = JSON.parse(responseBody);\r",
+							"pm.test(\"Succces Message\", function () {\r",
+							"    pm.expect(easyMoni.message).to.eql('Successful')\r",
+							"});\r",
+							"pm.test(\"Request is successful\", function () {\r",
+							"  pm.expect(easyMoni.requestSuccessful).to.eql(true)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"First and Last names are present and not empty\", function () {\r",
+							"     pm.expect(easyMoni.responseData.firstName).to.eql('Nalat');\r",
+							"     pm.expect(easyMoni.responseData.lastName).to.eql('Muda');\r",
+							"});\r",
+							"\r",
+							"var accessToken = easyMoni.responseData.token.token\r",
+							"pm.environment.set(\"access_token\", accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "access_token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"info@spaceso2o.com\",\r\n  \"password\": \"Rensource1$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BasedURL}}Auth/login",
+					"host": [
+						"{{BasedURL}}Auth"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
